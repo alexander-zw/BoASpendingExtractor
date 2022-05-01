@@ -1,0 +1,23 @@
+{
+    "name": "BoA Spending Info Extractor",
+    "version": "1.0.0",
+    "description": "extracts spending & budgeting information from your BoA page",
+    "manifest_version": 3,
+    "author": "Alexander Wu",
+    "action":{
+        "default_popup": "index.html",
+        "default_title": "BoA Spending Extractor"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://secure.bankofamerica.com/finance/spending/spending-overview/"],
+            "js": ["extract.js"]
+        }
+    ],
+    "host_permissions": [
+        "https://secure.bankofamerica.com/finance/spending/spending-overview/"
+    ],
+    "permissions": [
+        "activeTab"
+    ]
+}
